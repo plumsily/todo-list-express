@@ -1,3 +1,16 @@
 h1 {
     color: red;
 }
+
+.task{
+    cursor: pointer;
+}
+
+.fa-trash {
+    cursor: pointer;
+}
+
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}

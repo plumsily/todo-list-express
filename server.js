@@ -20,6 +20,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Get data from DB and Render HTML
 app.get("/", async (request, response) => {
   const todoItems = await db.collection("todos").find().toArray();
   const itemsLeft = await db
@@ -28,15 +29,40 @@ app.get("/", async (request, response) => {
   response.render("index.ejs", { items: todoItems, left: itemsLeft });
 });
 
+//Add a todo item to DB and refresh
 app.post("/addTodo", (request, response) => {
   db.collection("todos")
-    .insertOne({ task: request.body.todoItem, completed: false })
+    .insertOne({ item: request.body.todoItem, completed: false })
     .then((result) => {
       console.log("Todo Added");
       response.redirect("/");
     })
     .catch((error) => console.error(error));
 });
+
+//Mark a todo item as complete
+app.put("/markComplete", (request, response) => {
+  db.collection("todos")
+    .updateOne(
+      { item: request.body.itemFromJS },
+      {
+        $set: {
+          completed: false,
+        },
+      },
+      {
+        sort: { _id: -1 },
+        upsert: false,
+      }
+    )
+    .then((result) => {
+      console.log("Marked Complete");
+      response.json("Marked Complete");
+    })
+    .catch((error) => console.error(error));
+});
+
+//Mark a todo item as not complete
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
