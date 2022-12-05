@@ -47,7 +47,7 @@ app.put("/markComplete", (request, response) => {
       { item: request.body.itemFromJS },
       {
         $set: {
-          completed: false,
+          completed: true,
         },
       },
       {
@@ -63,6 +63,26 @@ app.put("/markComplete", (request, response) => {
 });
 
 //Mark a todo item as not complete
+app.put("/markUncomplete", (request, response) => {
+  db.collection("todos")
+    .updateOne(
+      { item: request.body.itemFromJS },
+      {
+        $set: {
+          completed: false,
+        },
+      },
+      {
+        sort: { _id: -1 },
+        upsert: false,
+      }
+    )
+    .then((result) => {
+      console.log("Marked Incomplete");
+      response.json("Marked Incomplete");
+    })
+    .catch((error) => console.error(error));
+});
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
