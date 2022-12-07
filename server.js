@@ -29,7 +29,7 @@ app.get("/", async (request, response) => {
   response.render("index.ejs", { items: todoItems, left: itemsLeft });
 });
 
-//Add a todo item to DB and refresh
+//Add an item to DB and refresh
 app.post("/addTodo", (request, response) => {
   db.collection("todos")
     .insertOne({ item: request.body.todoItem, completed: false })
