@@ -22,7 +22,11 @@ app.use(express.json());
 
 //Get data from DB and Render HTML
 app.get("/", async (request, response) => {
-  const todoItems = await db.collection("todos").find().toArray();
+  const todoItems = await db
+    .collection("todos")
+    .find()
+    .sort({ completed: 1 })
+    .toArray();
   const itemsLeft = await db
     .collection("todos")
     .countDocuments({ completed: false });

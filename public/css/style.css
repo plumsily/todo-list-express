@@ -1,5 +1,10 @@
+body {
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
+}
+
 h1 {
-    color: red;
+    /* color: red; */
+    font-size: 15rem;
 }
 
 .task{
@@ -8,9 +13,27 @@ h1 {
 
 .fa-trash {
     cursor: pointer;
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
 }
 
 .completed {
     color: gray;
     text-decoration: line-through;
+}
+
+.background {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+    font-family: "Unbounded", Arial, Helvetica, sans-serif;
+    color: gray;
+    filter: blur(8px);
+    cursor: default;
 }
