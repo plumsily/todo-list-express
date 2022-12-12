@@ -30,13 +30,27 @@ app.get("/", async (request, response) => {
   const itemsLeft = await db
     .collection("todos")
     .countDocuments({ completed: false });
-  response.render("index.ejs", { items: todoItems, left: itemsLeft });
+  const tags = [];
+  todoItems.forEach((item) => {
+    if (!tags.includes(item.tag)) {
+      tags.push(item.tag);
+    }
+  });
+  response.render("index.ejs", {
+    items: todoItems,
+    left: itemsLeft,
+    tags: tags,
+  });
 });
 
 //Add an item to DB and refresh
 app.post("/addTodo", (request, response) => {
   db.collection("todos")
-    .insertOne({ item: request.body.todoItem, completed: false })
+    .insertOne({
+      item: request.body.todoItem,
+      completed: false,
+      tag: request.body.tagItem,
+    })
     .then((result) => {
       console.log("Todo Added");
       response.redirect("/");
