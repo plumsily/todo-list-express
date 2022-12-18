@@ -1,9 +1,14 @@
 *{
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
     font-family: "Rubik", Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-flow: column nowrap;
+    /* align-items: center; */
+    overflow: hidden;
 }
 
 h1 {
@@ -11,6 +16,15 @@ h1 {
     font-size: 15rem;
 }
 
+h2 {
+    padding: 1rem 0;
+}
+.item {
+    padding: 0.1rem 0;
+}
+.todoItems {
+    margin-bottom: 1rem;
+}
 .task{
     cursor: pointer;
 }
@@ -52,17 +66,28 @@ h1 {
 
 .carousel{
     display: flex;
+    flex-flow: row nowrap;
     gap: 0.5rem;
+    justify-content: start;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 0.5rem 0;
+    /* white-space: nowrap; */
+    /* width: max-content; */
+    /* position: absolute; */
+    /* left: 0; */
 }
 
 .tags {
     display: flex;
-    flex-direction: column;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
     border: 1px solid gray;
     padding: 0.5rem 2rem;
+    width: 25rem;
 }
 
 .tags:hover {
-    scale: 1.1;
-    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    scale: 1.05;
+    transition: all 100ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }

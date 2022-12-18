@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="background">
-        <h1>TODO: <%= left %>  </h1>
-    </div>
     <h2>Your Todo List:</h2>
     <article class="carousel">
     <% for(let j=0;j<tags.length;j++){ %>
@@ -64,6 +61,10 @@
         <input type="text" placeholder="Tag" name="tagItem" list="tags-list">
         <input type="submit">
     </form>
+
+    <div class="background">
+        <h1>TODO: <%= left %>  </h1>
+    </div>
 
     <script src="js/main.js"></script>
   </body>
