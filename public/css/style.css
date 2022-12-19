@@ -7,8 +7,7 @@ body {
     font-family: "Rubik", Arial, Helvetica, sans-serif;
     display: flex;
     flex-flow: column nowrap;
-    /* align-items: center; */
-    overflow: hidden;
+    align-items: center;
 }
 
 h1 {
@@ -66,21 +65,13 @@ h2 {
 
 .carousel{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     gap: 0.5rem;
-    justify-content: start;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    padding: 0.5rem 0;
-    /* white-space: nowrap; */
-    /* width: max-content; */
-    /* position: absolute; */
-    /* left: 0; */
+    justify-content: center;
 }
 
 .tags {
     display: flex;
-    flex: 0 0 auto;
     flex-flow: column nowrap;
     border: 1px solid gray;
     padding: 0.5rem 2rem;
