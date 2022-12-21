@@ -103,6 +103,41 @@ footer {
     gap: 1rem;
 }
 
+form {
+    display: flex;
+    width: 75%;
+    gap: 0.4rem;
+}
+
 h3,input {
     font-size: 1.5rem;
+    padding: 0.5rem 0.7rem;
+}
+
+input{
+    appearance: none;
+    border: 1px solid black;
+}
+
+input:focus{
+    outline-style: solid;
+}
+
+.task-input {
+    width: 50%;
+}
+
+.tag-input {
+    width: 30%;
+}
+
+.form-button {
+    width: 20%;
+}
+
+.form-button:hover{
+    background-color: black;
+    color: white;
+    transition: all 100ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
 }
