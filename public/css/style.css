@@ -55,23 +55,23 @@ h1,h2 {
 
 .background-text {
     /* color: red; */
-    font-size: 30rem;
+    font-size: 15rem;
 }
 
 .background {
     display: flex;
     flex-flow: column nowrap;
     position: fixed;
-    bottom: -15rem;
+    bottom: 0rem;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     font-family: "Unbounded", Arial, Helvetica, sans-serif;
-    color: gray;
-    filter: blur(20px);
+    color: lightgray;
+    filter: blur(15px);
     cursor: default;
     /* background-image: linear-gradient(180deg,transparent, transparent,rgba(255, 218, 151, 0.7)); */
 }
@@ -94,7 +94,7 @@ h1,h2 {
     padding: 1rem 3rem;
     width: 30rem;
     background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(15px);
 }
 
 .tags:hover {
