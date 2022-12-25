@@ -158,7 +158,7 @@ input:focus{
 }
 
 .task-input {
-    width: 60%;
+    width: 55%;
 }
 
 .tag-input {
@@ -170,7 +170,7 @@ input:focus{
 }
 
 .form-button {
-    width: 10%;
+    width: 15%;
 }
 
 .form-button:hover{

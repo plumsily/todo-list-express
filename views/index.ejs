@@ -18,7 +18,7 @@
     <article class="carousel">
     <% for(let j=0;j<tags.length;j++){ %>
         <section class="tags">
-            <h2 class="tag-name"><%= tags[j]?tags[j]:"no tags" %></h2>
+            <h2 class="tag-name">#<%= tags[j]?tags[j]:"no tags" %></h2>
             <% let count = 0; %> 
             <ul class="todoItems">
                 <% for(let i=0;i<items.length;i++){%>
