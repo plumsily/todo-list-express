@@ -18,7 +18,8 @@
     <article class="carousel">
     <% for(let j=0;j<tags.length;j++){ %>
         <section class="tags">
-            <h2><%= tags[j]?tags[j]:"no-tag" %></h2>
+            <h2 class="tag-name"><%= tags[j]?tags[j]:"no tags" %></h2>
+            <% let count = 0; %> 
             <ul class="todoItems">
                 <% for(let i=0;i<items.length;i++){%>
                     <% if(items[i].tag == tags[j]){ %> 
@@ -27,12 +28,14 @@
                                 <span class="completed task"><%= items[i].item %></span>
                             <% }else{ %>  
                                 <span class="task"><%= items[i].item %></span>
+                                <% count+=1 %> 
                             <% } %> 
                             <span class="fa fa-trash"></span>
                         </li>
                     <% } %> 
                 <% } %> 
             </ul>
+            <h4 class="tag-count"><%= count %> </h4>
         </section>
     <% } %>  
     </article>
@@ -65,7 +68,7 @@
     </footer>
     <div class="background">
         <h2 class="background-text">TODO: <%= left %>  </h2>
-        <h2 class="background-text">COMPLETED: <%= left %>  </h2>
+        <!-- <h2 class="background-text">COMPLETED: <%= left %>  </h2> -->
     </div>
 
     <script src="js/main.js"></script>
