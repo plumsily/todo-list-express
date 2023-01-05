@@ -55,6 +55,7 @@
     <!-- <h2>Left to do: <%= left %></h2> -->
     <footer>
         <!-- <h3>Add a Todo:</h3> -->
+        <h2 class="title">TODO: <%= left %>  </h2>
         <form action="/addTodo" method="post">
             <datalist id="tags-list">
                 <% for(let j=0;j<tags.length;j++){ %>
@@ -66,10 +67,10 @@
             <input class="form-button" type="submit">
         </form>
     </footer>
-    <div class="background">
+    <!-- <div class="background">
         <h2 class="background-text">TODO: <%= left %>  </h2>
-        <!-- <h2 class="background-text">COMPLETED: <%= left %>  </h2> -->
-    </div>
+        <h2 class="background-text">COMPLETED: <%= left %>  </h2>
+    </div> -->
 
     <script src="js/main.js"></script>
   </body>
