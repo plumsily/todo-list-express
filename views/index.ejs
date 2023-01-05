@@ -15,6 +15,7 @@
   </head>
   <body>
     <!-- <h1>Your Todo List:</h1> -->
+    <h2 class="title">TODO: <%= left %>  </h2>
     <article class="carousel">
     <% for(let j=0;j<tags.length;j++){ %>
         <section class="tags">
@@ -55,7 +56,7 @@
     <!-- <h2>Left to do: <%= left %></h2> -->
     <footer>
         <!-- <h3>Add a Todo:</h3> -->
-        <h2 class="title">TODO: <%= left %>  </h2>
+        <!-- <h2 class="title">TODO: <%= left %>  </h2> -->
         <form action="/addTodo" method="post">
             <datalist id="tags-list">
                 <% for(let j=0;j<tags.length;j++){ %>
