@@ -107,9 +107,9 @@ h1,h2 {
     border-color: rgba(41, 141, 255, 0.4);
     z-index: 10;
     /* box-shadow: 0 5px 30px 10px rgba(100, 100, 100, 0.5); */
-    /* box-shadow: 0 5px 35px 15px rgba(41, 141, 255, 0.4); */
-    box-shadow: 0 5px 30px 15px rgb(220, 220, 255);
-    border-color: rgb(202, 202, 255);
+    box-shadow: 0 5px 35px 15px rgba(41, 141, 255, 0.4);
+    /* box-shadow: 0 5px 30px 15px rgb(220, 220, 255); */
+    /* border-color: rgb(202, 202, 255); */
 }
 .tags:hover .fa-trash{
     border: 1px solid rgb(170, 170, 170);
@@ -175,7 +175,8 @@ input:focus{
 }
 
 .task-input:hover, .tag-input:hover {
-    background-color: lightyellow;
+    /* background-color: lightyellow; */
+    background-color: rgba(255, 155, 41, 0.1);
 }
 
 .form-button {
@@ -195,6 +196,15 @@ input:focus{
     width: 100%;
     text-align: center;
     color: rgb(97, 97, 97);
-    font-size: 2rem;
+    font-size: 2.5rem;
+    padding-top: 0.5rem;
     z-index: 15;
+    filter: drop-shadow(0 2px 3px rgba(153, 153, 153, 0.5));
+}
+
+.title span:first-of-type{
+    color: rgba(41, 141, 255, 1);
+}
+.title span:last-of-type{
+    color: rgba(255, 155, 41, 1);
 }
