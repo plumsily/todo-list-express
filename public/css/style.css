@@ -49,13 +49,22 @@ h1,h2 {
 }
 
 .completed {
-    color: rgb(187, 187, 187);
+    color: rgb(175, 175, 175);
     text-decoration: line-through;
 }
 
 .background-text {
     /* color: red; */
-    font-size: 15rem;
+    color: white;
+    font-size: 30rem;
+    filter: drop-shadow(0 0px 20px rgba(124, 124, 124, 0.1))
+    drop-shadow(0 0px 60px rgba(124, 124, 124, 0.2))
+    drop-shadow(0 0px 90px rgba(124, 124, 124, 0.2));
+    /* filter: drop-shadow(0 0px 10px rgba(255, 155, 41, 0.5))
+    drop-shadow(0 0px 30px rgba(255, 155, 41, 0.4))
+    drop-shadow(0 0px 80px rgba(255, 155, 41, 0.3)); */
+    /* filter: drop-shadow(0 0px 10px rgba(41, 141, 255, 0.7))
+    drop-shadow(0 0px 60px rgba(41, 141, 255, 0.5)); */
 }
 
 .background {
@@ -70,14 +79,13 @@ h1,h2 {
     justify-content: center;
     align-items: center;
     font-family: "Unbounded", Arial, Helvetica, sans-serif;
-    color: lightgray;
     filter: blur(15px);
     cursor: default;
     /* background-image: linear-gradient(180deg,transparent, transparent,rgba(255, 218, 151, 0.7)); */
 }
 
 .carousel{
-    margin: 5rem 0;
+    margin: 6rem 0;
     display: flex;
     flex-flow: row wrap;
     gap: 0.6rem;
@@ -93,21 +101,23 @@ h1,h2 {
     border-radius: 15px;
     padding: 1rem 3rem;
     width: 30rem;
-    background: rgba(255,255,255,0);
+    /* background: rgba(255,255,255,0); */
+    /* background: linear-gradient(150deg,transparent,transparent,transparent,rgba(99, 99, 99, 0.03)), linear-gradient(240deg,transparent,transparent,transparent,rgba(99, 99, 99, 0.02)); */
     backdrop-filter: blur(20px);
 }
 
 .tags:hover {
     scale: 1.05;
     transition: all 100ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    background: rgba(255,255,255,1);
+    /* background: rgba(255,255,255,1); */
+    background: linear-gradient(160deg,rgba(255, 255, 255,0.97),rgba(255, 255, 255,0.97),rgba(255, 255, 255,0.97),rgba(41, 141, 255, 0.03));
     /* background-color: lightyellow; */
     /* background-color: rgba(255, 255, 236,0.5); */
     /* backdrop-filter: blur(3px); */
-    border-color: rgba(41, 141, 255, 0.4);
+    border-color: rgba(41, 141, 255, 0.6);
     z-index: 10;
     /* box-shadow: 0 5px 30px 10px rgba(100, 100, 100, 0.5); */
-    box-shadow: 0 5px 35px 15px rgba(41, 141, 255, 0.4);
+    box-shadow: 0 5px 35px 15px rgba(41, 141, 255, 0.4), 0 5px 40px 50px rgba(41, 141, 255, 0.1);
     /* box-shadow: 0 5px 30px 15px rgb(220, 220, 255); */
     /* border-color: rgb(202, 202, 255); */
 }
@@ -176,7 +186,19 @@ input:focus{
 
 .task-input:hover, .tag-input:hover {
     /* background-color: lightyellow; */
-    background-color: rgba(255, 155, 41, 0.1);
+    /* background: linear-gradient(175deg,transparent,transparent,rgba(255, 155, 41, 0.2)); */
+    /* background-color: rgba(255, 155, 41, 0.1); */
+    filter: drop-shadow(0 0px 3px rgba(255, 155, 41, 0.4))
+    drop-shadow(0 0px 8px rgba(255, 155, 41, 0.5))
+    drop-shadow(0 0px 15px rgba(255, 155, 41, 0.3));
+    transition: all 100ms ease-in-out;
+}
+
+.task-input:focus, .tag-input:focus {
+    filter: drop-shadow(0 0px 3px rgba(255, 155, 41, 0.5))
+    drop-shadow(0 0px 8px rgba(255, 155, 41, 0.5))
+    drop-shadow(0 0px 15px rgba(255, 155, 41, 0.3));
+    transition: all 100ms ease-in-out;
 }
 
 .form-button {
@@ -195,16 +217,23 @@ input:focus{
     top: 0;
     width: 100%;
     text-align: center;
-    color: rgb(97, 97, 97);
-    font-size: 2.5rem;
+    color: rgba(97, 97, 97);
+    font-size: 3rem;
     padding-top: 0.5rem;
     z-index: 15;
-    filter: drop-shadow(0 2px 3px rgba(153, 153, 153, 0.5));
+    filter: drop-shadow(0 2px 3px rgba(153, 153, 153, 0.2));
+    /* filter: drop-shadow(0 0px 10px rgba(41, 141, 255, 1))
+    drop-shadow(0 0px 20px rgba(41, 141, 255, 0.5)); */
+    /* filter: drop-shadow(0 0px 5px rgba(255, 155, 41, 0.6))
+    drop-shadow(0 0px 10px rgba(255, 155, 41, 0.5))
+    drop-shadow(0 0px 30px rgba(255, 155, 41, 0.4)); */
 }
 
 .title span:first-of-type{
-    color: rgba(41, 141, 255, 1);
+    /* color: rgba(41, 141, 255, 1); */
+    color: rgb(112, 112, 112);
 }
 .title span:last-of-type{
     color: rgba(255, 155, 41, 1);
+    /* color: white */
 }
