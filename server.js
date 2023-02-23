@@ -12,6 +12,9 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
   (client) => {
     console.log(`Connected to ${dbName} Database!`);
     db = client.db(dbName);
+    app.listen(process.env.PORT || PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
   }
 );
 
@@ -113,6 +116,6 @@ app.delete("/deleteItem", (request, response) => {
     .catch((error) => console.error(error));
 });
 
-app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// app.listen(process.env.PORT || PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
