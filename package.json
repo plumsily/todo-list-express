@@ -2,8 +2,8 @@
   "name": "todo-list-express",
   "version": "1.0.0",
   "description": "",
-  "main": "./public/js/main.js",
   "scripts": {
+    "start": "node ./public/js/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
   },
