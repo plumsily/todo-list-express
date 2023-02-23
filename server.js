@@ -8,15 +8,30 @@ let db,
   dbConnectionStr = process.env.DB_STRING,
   dbName = "todo";
 
-MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
-  (client) => {
-    console.log(`Connected to ${dbName} Database!`);
-    db = client.db(dbName);
-    app.listen(process.env.PORT || PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
+const uri = process.env.MONGO_CONNECTION_STRING;
+const client = new MongoClient(uri);
+
+client.connect((err) => {
+  if (err) {
+    console.error(err);
+    return false;
   }
-);
+  // connection to mongo is successful, listen for requests
+  db = client.db(dbName);
+  app.listen(process.env.PORT || PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+});
+
+// MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
+//   (client) => {
+//     console.log(`Connected to ${dbName} Database!`);
+//     db = client.db(dbName);
+//     app.listen(process.env.PORT || PORT, () => {
+//       console.log(`Server running on port ${PORT}`);
+//     });
+//   }
+// );
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
